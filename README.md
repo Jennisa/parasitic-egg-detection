@@ -19,22 +19,29 @@ Authors: Thanaphon Suwannaphong, Sawaphob Chavana, Sahapol Tongsom, Duangdao Pal
 
 This paper presents a deep learning technology with a transfer learning approach for an automatic system of parasite egg detection and classification during a faecal examination. The proposed CNN models show a competent ability in learning relevant features of the different parasitic eggs even in low quality images sourced from a USB microscope. Overall, ResNet50 framework can classify the four types of parasitic eggs with high accuracy and outperforms AlexNet, SSD and Faster R-CNN.
 
-## Method and Results: Describe your detailed technical approach and innovations. Describe evaluation results (dataset and metric).
+## Method and Results:
 
 Datasets
 
 The images
 - The train and test data are provided in https://icip2022challenge.piclab.ai/dataset/.
+- There are 1,000 and 250 images/class for training and testing.
 - The dataset contains 11 types of parasitic eggs. 
-- There are 1,000 and 250 images/class for training and testing 
+![alt text](http://url/to/img.png)
+- The images are in different resolutions, different lighting and setting conditions. 
+![alt text](http://url/to/img.png)
 
 The labels
 - The labels contain bounding box, category id, area and images information which follow COCO annotation.
+![alt text](http://url/to/img.png)
 
 Methods
 
 Step 1: Data preprocessing
 - Greyscale conversion -> decreases channel from 3(RGB) to 1.
+- Histogram equalization -> allows the image’s areas with lower contrast to gain a higher contrast.
+![alt text](http://url/to/img.png)
+
 
 Step 2: Data augmentation
 
@@ -50,6 +57,8 @@ Step 3: Object detection model
 - Baseline model (SSD300 and Faster R-CNN)
 
 SSD is a very light weight network having one single shot to detect multiple objects within the image, whilst Faster R-CNN requires two shots, one for searching for regions of interest (ROI), and the other for detecting the object in each ROI using CNNs. The backbones of SSD and Faster R-CNN used here are VGG-16 and ResNet50 architectures, respectively.
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
 
 Step 4: Setup training model
 - Train Validation Test split = 0.6 / 0.2 / 0.2
@@ -79,10 +88,10 @@ SSD + augmentation | 0.6424 | 0.8129 |
 SSD + preprocess + augmentation | 0.6256 | 0.7997 |
 Faster R-CNN | 0.6749 | 0.8168 |
 Faster R-CNN + preprocess | 0.6583 | 0.7950 |
-Faster R-CNN + augmentation | 0.7127 | 0.8552 |
+Faster R-CNN + augmentation | **0.7127** | **0.8552** |
 Faster R-CNN + preprocess + augmentation | 0.6936 | 0.8246 |
 
-- The result shows that augmented images with model version has the best mIOU and macro-F1 score.
+- The result shows that augmented images with Faster R-CNN has the best mIOU and macro-F1 score.
 - Faster R-CNN gives better mIOU and macro-F1 score than SSD.
 
 ## Discussion and Future Work: What are the limitations of your work? What are areas for future improvements?
@@ -92,4 +101,3 @@ The poor-quality microscopic image with insufficient detail is still a big chall
 Future work
 - Deploy the system for real time usage.
 - Improve the precision and correctness of parasitie egg detection and discrimination between types of parasite eggs.
-
