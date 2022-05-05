@@ -1,18 +1,17 @@
 # Parasitic Egg Detection and classification
 
-## Problem Statement: Describe what problem you want to solve; what's the input/output;Why it is important or interesting. 
+## Problem Statement: 
 The objective of this project is to automatically detect parasitic eggs and also identify the egg type in compound microscopy images by using the fields of image processing, medical imaging and computer vision.
 
 Input: microscopic images of parasite egg
 Output: bounding box and class of the parasite egg
 
-Why is it important?
 The outcome of this project could be further improved and assist diagnosis in real clinical use, or even automate detection and identification of intestinal parasite eggs, which can be used by non-experts.
 
 ## Technical Challenges: Briefly describe what is technically challenges of this problem.
 
 
-## Related Works: Briefly summarise the related work from your survey.
+## Related Works: 
 Paper: Parasitic Egg Detection and Classification in Low-cost Microscopic Images using Transfer Learning
 Authors: Thanaphon Suwannaphong, Sawaphob Chavana, Sahapol Tongsom, Duangdao Palasuwan, Thanarat H. Chalidabhongseb and Nantheera Anantrasirichaid
 
@@ -26,6 +25,7 @@ Datasets
 - There are 1,000 and 250 images/class for training and testing 
 
 Methods
+
 Step 1: Data preprocessing
 - Greyscale conversion -> decreases channel from 3(RGB) to 1.
 
@@ -39,10 +39,23 @@ There are 11,000 original images and 22,000 augmented images which were augmente
 - Random Clahe/Sharpen/GaussNoise/Blur/Emboss
 
 Step 3: Object detection model 
-Baseline model (SSD300 and Faster R-CNN)
+- Baseline model (SSD300 and Faster R-CNN)
 
 Step 4: Setup training model
+- Train Validation Test split = 0.6 / 0.2 / 0.2
+- SSD
+LR = 1e-3 with 5-step factor=0.1
+Epoch = 20
+- Faster R-CNN
+LR = 5e-3 with 1-step factor=0.1
+Epoch = 5
+Metrics for benchmarking
+- mIoU (object detection score): the average of IoU of each class. 
+- macro-F1 Score (classification score): 2 × (precision × recall)/(precision + recall)
+
 Step 5: Test on actual challenge 
 
 ## Discussion and Future Work: What are the limitations of your work? What are areas for future improvements?
+The poor-quality microscopic image with insufficient detail is still a big challenge that prevents the model from correctly discriminating between different types of parasite eggs and sample impurities. Thus, more work is still required to improve this system.
 
+A larger pretrained network may help the model to learn more complex features of the parasite eggs. This may aid the model to extract the relevant features more accurately.
