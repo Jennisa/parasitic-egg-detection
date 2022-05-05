@@ -10,7 +10,7 @@ Output: bounding box and the type of the parasite egg
 The outcome of this project could be further improved and assist diagnosis in real clinical use, or even automate detection and identification of intestinal parasite eggs, which can be used by non-experts.
 
 ## Technical Challenges: Briefly describe what is technically challenges of this problem.
-
+Some eggs have low contrast and lack of details inside the eggs which can lead to misdetection.
 
 ## Related Works: 
 Paper: Parasitic Egg Detection and Classification in Low-cost Microscopic Images using Transfer Learning
@@ -32,7 +32,7 @@ The images
 ![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/02.png)
 
 The labels
-- The labels contain bounding box, category id, area and images information which follow COCO annotation.
+- The labels contain bounding box, category id, area and images information which follow COCO annotation. The annotations are stored using JSON with structure below.
 ![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/03.png)
 
 Methods
@@ -40,6 +40,8 @@ Methods
 Step 1: Data preprocessing
 - Greyscale conversion -> decreases channel from 3(RGB) to 1.
 - Histogram equalization -> allows the image’s areas with lower contrast to gain a higher contrast.
+
+Example image before and after preprocessing
 ![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/04.png)
 
 
