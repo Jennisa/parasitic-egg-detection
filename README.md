@@ -24,7 +24,7 @@ This paper presents a deep learning technology with a transfer learning approach
 Datasets
 
 The images
-- The data are provided in https://icip2022challenge.piclab.ai/dataset/.
+- The train and test data are provided in https://icip2022challenge.piclab.ai/dataset/.
 - The dataset contains 11 types of parasitic eggs. 
 - There are 1,000 and 250 images/class for training and testing 
 
@@ -74,13 +74,13 @@ The scores are shown in the table below
 Model | mIOU | mF1Score |
 --- | --- | --- | 
 SSD | 0.5983 | 0.7769 |
-SSD + preprocess | 0.5983 | 0.7769 |
-SSD + augmentation | 0.5983 | 0.7769 |
-SSD + preprocess + augmentation | 0.5983 | 0.7769 |
-Faster R-CNN | 0.5983 | 0.7769 |
-Faster R-CNN + preprocess | 0.5983 | 0.7769 |
-Faster R-CNN + augmentation | 0.5983 | 0.7769 |
-Faster R-CNN + preprocess + augmentation | 0.5983 | 0.7769 |
+SSD + preprocess | 0.5548 | 0.7769 |
+SSD + augmentation | 0.6424 | 0.8129 |
+SSD + preprocess + augmentation | 0.6256 | 0.7997 |
+Faster R-CNN | 0.6749 | 0.8168 |
+Faster R-CNN + preprocess | 0.6583 | 0.7950 |
+Faster R-CNN + augmentation | 0.7127 | 0.8552 |
+Faster R-CNN + preprocess + augmentation | 0.6936 | 0.8246 |
 
 - The result shows that augmented images with model version has the best mIOU and macro-F1 score.
 - Faster R-CNN gives better mIOU and macro-F1 score than SSD.
