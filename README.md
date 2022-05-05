@@ -10,7 +10,8 @@ Output: bounding box and the type of the parasite egg
 The outcome of this project could be further improved and assist diagnosis in real clinical use, or even automate detection and identification of intestinal parasite eggs, which can be used by non-experts.
 
 ## Technical Challenges: Briefly describe what is technically challenges of this problem.
-Some eggs have low contrast and lack of details inside the eggs which can lead to misdetection.
+- Some eggs have low contrast and lack of details inside the eggs which can lead to difficulty in detection and species classification.
+- The images are in different resolutions, different lighting and setting conditions which are difficult to preprocess.
 
 ## Related Works: 
 Paper: Parasitic Egg Detection and Classification in Low-cost Microscopic Images using Transfer Learning
