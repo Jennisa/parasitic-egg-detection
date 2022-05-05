@@ -27,20 +27,20 @@ The images
 - The train and test data are provided in https://icip2022challenge.piclab.ai/dataset/.
 - There are 1,000 and 250 images/class for training and testing.
 - The dataset contains 11 types of parasitic eggs. 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/01.png)
 - The images are in different resolutions, different lighting and setting conditions. 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/02.png)
 
 The labels
 - The labels contain bounding box, category id, area and images information which follow COCO annotation.
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/03.png)
 
 Methods
 
 Step 1: Data preprocessing
 - Greyscale conversion -> decreases channel from 3(RGB) to 1.
 - Histogram equalization -> allows the image’s areas with lower contrast to gain a higher contrast.
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/04.png)
 
 
 Step 2: Data augmentation
@@ -57,8 +57,8 @@ Step 3: Object detection model
 - Baseline model (SSD300 and Faster R-CNN)
 
 SSD is a very light weight network having one single shot to detect multiple objects within the image, whilst Faster R-CNN requires two shots, one for searching for regions of interest (ROI), and the other for detecting the object in each ROI using CNNs. The backbones of SSD and Faster R-CNN used here are VGG-16 and ResNet50 architectures, respectively.
-![alt text](http://url/to/img.png)
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/05.png)
+![alt text](https://github.com/Jennisa/parasitic-egg-detection/blob/main/images/06.png)
 
 Step 4: Setup training model
 - Train Validation Test split = 0.6 / 0.2 / 0.2
