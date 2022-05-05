@@ -64,11 +64,25 @@ Step 5: Test on actual challenge
 
 Result
 - For each of our object detection model, we submitted the result of four versions including 
-  1. original images + model
-  2. preprocessed images + model
-  3. augmented images + model
-  4. preprocessed + augmented images + model
-The result shows that augmented images with model version has the best mIOU and macro-F1 score.
+1. original images + model
+2. preprocessed images + model
+3. augmented images + model
+4. preprocessed + augmented images + model
+
+The scores are shown in the table below
+
+Model | mIOU | mF1Score |
+--- | --- | --- | 
+SSD | 0.5983 | 0.7769 |
+SSD + preprocess | 0.5983 | 0.7769 |
+SSD + augmentation | 0.5983 | 0.7769 |
+SSD + preprocess + augmentation | 0.5983 | 0.7769 |
+Faster R-CNN | 0.5983 | 0.7769 |
+Faster R-CNN + preprocess | 0.5983 | 0.7769 |
+Faster R-CNN + augmentation | 0.5983 | 0.7769 |
+Faster R-CNN + preprocess + augmentation | 0.5983 | 0.7769 |
+
+- The result shows that augmented images with model version has the best mIOU and macro-F1 score.
 - Faster R-CNN gives better mIOU and macro-F1 score than SSD.
 
 ## Discussion and Future Work: What are the limitations of your work? What are areas for future improvements?
